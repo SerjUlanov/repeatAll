@@ -1,3 +1,5 @@
+//Глава 3. 
+
 //Strings (тип данных)
 //const dialod = "Sam looked up and said "don't do that" to Max"
 // выражение выше приведёт к ошибке, необходимо использовать экранирование (\)
@@ -127,3 +129,45 @@ let arr3 = [
 console.log(arr3[2][1][2])//[2][1][2]-это путь к значению "take me out"
 //массивы обладают свойстом .length, оно возвращает длинну массива
 console.log(arr2.length)//массив arr2 имеет 4 значения и длинна массива равна 4
+
+// Date - встроенный объект, представлющий время и дату в JS.
+// вывод текщей даты и времени
+const now1 = new Date();
+console.log(now1);
+//за секунду до Нового Года
+const newYear = new Date(2022, 11, 31, 23, 59, 59);
+console.log(newYear);
+//имея объект Date, можно получить его компоненты:
+console.log(newYear.getDate());
+//...to be continue
+
+//Regular expression, Map, Sat, WeakMap, WeakSet ... to be continue ))
+
+//Data type transform
+//наиболее популярно - преобразование строк в числа ( strings to numbers )
+//Существует несколько способов реализации:
+//Первый из низ - использование конструктора объекта Number:
+const numStr = "33.3";
+console.log(numStr);
+const num = Number(numStr);
+console.log(num);
+//если строка не может быть интерпретирована в число, то возвращает - NaN.
+//Второй варинат - использование функций parseInt или parsentFloat.
+//данные функции не воспрнимают символы после числа, позволяя использовать не отфильтрованный ввод
+//parseInt - позволяет определить основание системы счисления;
+//parseFloat - всегда подразумевает основание 10;
+const a1 = parseInt("16 volts", 10); // слово "volts" - игнорируется, 16 преобразуется по основанию 10.
+console.log(a1);
+const b1 = parseInt("5b", 16); // "b"-игнорируется, преобразует 5 по основанию 16
+console.log(b1);
+const c1 = parseFloat("15.5 kph"); //"kph"-игнорируется, преобразует 15.5 по основанию 10
+console.log(c1);
+//метод toString(); позволяет трансформировать число в строку.
+//метод toString() массива, преобразует в строки каждый элемент массива, а затем объединяет их в одну строку, разделив запятой.
+const n1 = 33.5;
+const n1_str = n1.toString();
+console.log(n1_str);
+const n1_arr = [1, true, "Hello"]
+console.log(n1_arr);
+console.log(n1_arr.toString());
+
