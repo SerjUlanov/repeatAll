@@ -71,3 +71,42 @@ console.log(Object.getOwnPropertySymbols(person));//выведет имена с
 //null - пусто ( считается, что для программеров )
 //undefined - не определено ( считается, что для javaScript )
 //когда переменная объявлена, но значение ей не присвоено, то её значение будет равно undefined
+
+//Objects ( data type )
+//в отличии от базовых типов, может представлять несколько значений, а так же изменять их в процессе существования.
+const obj1 = {}; // создание пустого объекта.
+//содержимое объекта (внутри {...}) - называют свойстами(или членами).
+//в свою очаредь члены состоят их ключа(имени) и значения.
+//ключом может быть строка, либо символ
+//значение может быть любым типом данных
+obj1.size;
+obj1.color = "yellow";
+console.log(obj1);
+//объект может быть создан со свойставми с самого начала:
+const sam1 = {
+   name: "Sam",
+   age: 4,
+}
+//объекты могут содержать другие объекты в качестве свойства:
+const repa1 = {
+   name: "Repa",
+   classification: {
+      kingdom: "Anamalia",
+      class: "Mamalia",
+      family: "Frlidae",
+      species: "catus",
+   }
+}
+//способы доступа к значениям
+console.log(repa1.classification.family);
+console.log(repa1["classification"].class);
+console.log(repa1.classification['kingdom']);
+console.log(repa1["classification"]['species']);
+//так же, объекты могут содержать функции
+repa1.speak = function () { return "Meow!"; };
+//вызов такой функции
+console.log(repa1.speak());
+//оператор delate служит для удаления свойства из объекта:
+console.log(repa1);//{name: 'Repa', classification: {…}, speak: ƒ}
+delete repa1.classification;
+console.log(repa1);//{name: 'Repa', speak: ƒ}
