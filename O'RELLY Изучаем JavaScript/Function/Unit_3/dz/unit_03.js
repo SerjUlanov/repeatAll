@@ -284,11 +284,22 @@ document.querySelector('.b-20').addEventListener('click', function () {
 // Для генерации случайного числа используйте t13.
 
 function t21(s) {
-
+    if (s === "even") {
+        let a = t13(10, 20)
+        while (a % 2 != 0) {
+            a = t13(10, 20)
+        }
+        return a;
+    } else (s === "odd")
+    let a = t13(10, 20)
+    while (a % 2 == 0) {
+        a = t13(10, 20)
+    }
+    return a;
 }
 
 document.querySelector('.b-21').addEventListener('click', function () {
-    document.querySelector('.out-21').textContent = 10 + t21('even') + 20;
+    document.querySelector('.out-21').textContent = t21('odd');
 })
 
 
@@ -302,7 +313,7 @@ function t22() {
 }
 
 function callback22(item) {
-
+    return item % 2 === 0 ? true : false
 }
 
 document.querySelector('.b-22').addEventListener('click', function () {
@@ -319,7 +330,7 @@ function t23() {
 }
 
 function callback23(item) {
-
+    return item ** 2;
 }
 
 document.querySelector('.b-23').addEventListener('click', function () {
@@ -342,7 +353,7 @@ function t24() {
 }
 
 function callback24(item) {
-
+    return item ** 2;
 }
 
 document.querySelector('.b-24').addEventListener('click', function () {
@@ -355,6 +366,10 @@ document.querySelector('.b-24').addEventListener('click', function () {
 
 
 function t25(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== 'number') return false;
+    }
+    return true;
 }
 
 document.querySelector('.b-25').addEventListener('click', function () {
@@ -366,6 +381,14 @@ document.querySelector('.b-25').addEventListener('click', function () {
 
 
 function t26() {
+    let input = document.querySelector(".i-26").value;
+    let out = document.querySelector(".out-26")
+    if (input !== null) {
+        out.textContent = input.toLowerCase()
+    } else {
+        return
+    }
+
 }
 
 document.querySelector('.b-26').addEventListener('click', t26);
@@ -381,6 +404,9 @@ const obj27 = {
 }
 
 function t27(v) {
+    console.log(obj27);
+    console.log(Object.values(obj27));
+    return Object.keys(obj27).find(key => obj27[key] === v);
 }
 
 document.querySelector('.b-27').addEventListener('click', function () {
@@ -393,20 +419,24 @@ document.querySelector('.b-27').addEventListener('click', function () {
 // Напишите функцию которая принимает два аргумента - строку и подстроку и если подстрока есть в строке - возвращает true, если нет false.
 
 function t28(str, substr) {
+    return str.includes(substr)
 }
 
 document.querySelector('.b-28').addEventListener('click', function () {
-    document.querySelector('.out-28').textContent = t28('hello my world', 'or');
+    document.querySelector('.out-28').textContent = t28('hello my world', 'e');
 })
 
 // Task 29
 // Напишите функцию, которая получает в качестве аргументов строки и возвращает большую строку (прямым сравнением).
 
 function t29(str1, str2) {
+    let a = str1.split("");
+    let b = str2.split("");
+    return a.length > b.length ? a.join("") : b.join("")
 }
 
 document.querySelector('.b-29').addEventListener('click', function () {
-    document.querySelector('.out-29').textContent = t29('hello', 'orBait');
+    document.querySelector('.out-29').textContent = t29('hellohh', 'orBait');
 })
 
 
@@ -419,6 +449,7 @@ function t31() {
 }
 
 function t30() {
+    return t31();
 }
 
 
